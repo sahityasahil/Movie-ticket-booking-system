@@ -5,6 +5,7 @@
 #include<strings.h>
 struct moviedetails person[300];
 int count=0;
+int num;
 int id2=1000;
 int main()
 {
@@ -148,6 +149,12 @@ void ticket1(int choice,char name[10],int id2,int price)
         printf("\t                                              Price     : %d  \n\n",price);
 		person[count].id=id2;
         printf("\t============================================================\n");
+        FILE *out=fopen("Reciept.txt","w");
+        fputs("------------Your Receipt------------\n",out);
+        fputs("Show Name : Inception\n",out);
+        fprintf(out,"Customer Name:%s\n",name);
+        fprintf(out,"Hall no : 02 --- Seat No. %d\n",choice);
+        fprintf(out,"Total Price: %d\n",num);
         return;
 }
 void details(void)
@@ -197,6 +204,12 @@ void ticket2(int choice,char name[10],int id2,int price)
         printf("\t                                              Price .   : %d\n\n",price);
         person[count].id=id2;
         printf("\t============================================================\n");
+        FILE *out=fopen("Reciept.txt","w");
+        fputs("------------Your Receipt------------\n",out);
+        fputs("Show Name : 3 Idiots\n",out);
+        fprintf(out,"Customer Name:%s\n",name);
+        fprintf(out,"Hall no : 03 --- Seat No. %d\n",choice);
+        fprintf(out,"Total Price: %d\n",num);
         return;
 }
 int cmovie(void)
@@ -225,5 +238,11 @@ void ticket3(int choice,char name[10],int id2,int price)
         printf("\t                                              Price .   : %d\n\n",price);
         person[count].id=id2;
         printf("\t============================================================\n");
+         FILE *out=fopen("Reciept.txt","w");
+        fputs("------------Your Receipt------------\n",out);
+        fputs("Show Name : Spider-Man: No way Home\n",out);
+        fprintf(out,"Customer Name:%s\n",name);
+        fprintf(out,"Hall no : 04 --- Seat No. %d\n",choice);
+        fprintf(out,"Total Price: %d\n",num);
         return;
 }
